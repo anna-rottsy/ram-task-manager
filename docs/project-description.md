@@ -4,30 +4,31 @@
 
 RAM Task Manager is a simple web-based productivity application designed to help users manage daily tasks.
 
-The project demonstrates basic frontend development concepts and simple task management logic.
+This project demonstrates basic frontend development concepts and simple task management logic.
 
 ## Goals
 
 The main goal of this project is to practice:
 
 - JavaScript DOM manipulation
-- basic UI design
-- project structuring
-- version control using Git
+- Basic UI design
+- Project structuring
+- Version control using Git
 
 ## Features
 
 Current features:
 
-• Add a task  
-• Mark task as completed  
-• Delete task  
+- Add a task
+- Mark task as completed
+- Delete task
+- Clear completed tasks
+- Tasks persist after page reload using LocalStorage
 
 ## Future Improvements
 
 Planned improvements:
 
-- Task persistence using LocalStorage
 - Task categories
 - Task deadlines
 - UI improvements
@@ -36,16 +37,3 @@ Planned improvements:
 ## Architecture
 
 The project has a simple structure:
-
-src  
-Contains application source files
-
-docs  
-Contains documentation and project description
-
-README  
-High-level overview of the project
-
-## Author
-
-Anna Rottsy
