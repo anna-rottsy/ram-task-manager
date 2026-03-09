@@ -1,83 +1,70 @@
-const input = document.getElementById("taskInput")
-const taskList = document.getElementById("taskList")
+const input = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || []
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-renderTasks()
+renderTasks();
 
 function addTask() {
-
-  const taskText = input.value.trim()
-
-  if (taskText === "") return
+  const taskText = input.value.trim();
+  if (taskText === "") return;
 
   const task = {
     text: taskText,
     completed: false
-  }
+  };
 
-  tasks.push(task)
+  tasks.push(task);
+  saveTasks();
+  renderTasks();
 
-  saveTasks()
-  renderTasks()
-
-  input.value = ""
+  input.value = "";
 }
 
 function renderTasks() {
-
-  taskList.innerHTML = ""
+  taskList.innerHTML = "";
 
   tasks.forEach((task, index) => {
+    const li = document.createElement("li");
 
-    const li = document.createElement("li")
-
-    const span = document.createElement("span")
-    span.textContent = task.text
-
+    const span = document.createElement("span");
+    span.textContent = task.text;
     if (task.completed) {
-      span.classList.add("completed")
+      span.classList.add("completed");
     }
-
     span.onclick = () => {
-      tasks[index].completed = !tasks[index].completed
-      saveTasks()
-      renderTasks()
-    }
+      tasks[index].completed = !tasks[index].completed;
+      saveTasks();
+      renderTasks();
+    };
 
-    const deleteBtn = document.createElement("button")
-    deleteBtn.textContent = "Delete"
-
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
     deleteBtn.onclick = () => {
-      tasks.splice(index, 1)
-      saveTasks()
-      renderTasks()
-    }
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    };
 
-    li.appendChild(span)
-    li.appendChild(deleteBtn)
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
 
-    taskList.appendChild(li)
+    taskList.appendChild(li);
+  });
+}
 
-  })
-
+function clearCompleted() {
+  tasks = tasks.filter(task => !task.completed);
+  saveTasks();
+  renderTasks();
 }
 
 function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks))
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-input.addEventListener("keypress", function(e) {
+input.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    addTask()
+    addTask();
   }
-})
-
-function clearCompleted() {
-
-  tasks = tasks.filter(task => !task.completed)
-
-  saveTasks()
-  renderTasks()
-
-}
+});
