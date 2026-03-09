@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAM Task Manager</title>
   <link rel="stylesheet" href="src/style.css">
 </head>
 
 <body>
 
-<h1>RAM Task Manager</h1>
+  <div class="container">
 
-<input type="text" id="taskInput" placeholder="Enter a task">
-<button onclick="addTask()">Add Task</button>
+    <h1>RAM Task Manager</h1>
 
-<ul id="taskList"></ul>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
 
-<button onclick="clearCompleted()">Clear completed tasks</button>
+    <ul id="taskList"></ul>
 
-<script src="src/app.js"></script>
+    <button onclick="clearCompleted()">Clear completed tasks</button>
 
+  </div>
+
+  <script src="src/app.js"></script>
 </body>
 
 </html>
