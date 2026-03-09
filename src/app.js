@@ -72,3 +72,12 @@ input.addEventListener("keypress", function(e) {
     addTask()
   }
 })
+
+function clearCompleted() {
+
+  tasks = tasks.filter(task => !task.completed)
+
+  saveTasks()
+  renderTasks()
+
+}
