@@ -15,7 +15,7 @@ h1 {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 input {
@@ -53,11 +53,11 @@ li {
   justify-content: space-between;
 }
 
+span {
+  cursor: pointer;
+}
+
 .completed {
   text-decoration: line-through;
   opacity: 0.6;
-}
-
-span {
-  cursor: pointer;
 }
